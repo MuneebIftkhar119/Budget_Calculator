@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="budjet-calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="upperpart">
+            <p>Available Budget in Aug 2024</p>
+            <div class="output"></div>
+            <div class="income">
+                <p>INCOME</p>
+                <div class="intaken">+0.00</div>
+            </div>
+            <div class="expenses">
+                <p>EXPENSES</p>
+                <div class="extaken">-0.00 
+                    <!-- <div class="percentage"></div> -->
+                </div>
+            </div>     
+        </div>
+        <nav>
+            <select class="select">
+                <option value="+">+</option>
+                <option value="-">-</option>
+            </select>
+            <input type="text" placeholder="Add description" class="description">
+            <input type="text" placeholder="Value" class="value">
+            <button type="button">
+                <i class="fa-regular fa-circle-check" id="icon"></i>
+            </button>
+        </nav>
+        <div class="lowerpart">
+            <div class="incomelist">
+                <p>INCOME</p>
+                <ul class="incomelist"></ul>
+            </div>
+            <div class="expenselist">
+                <p>EXPENSES</p>
+                <ul class="expenselist" id="animate"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="budget-calculator.js"></script>
+</body>
+</html> 

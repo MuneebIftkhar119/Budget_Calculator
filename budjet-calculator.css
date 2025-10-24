@@ -1,0 +1,262 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+}
+.upperpart{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+   height: 40vh;
+   gap: 20px;
+  background-image: url(mountain.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.upperpart p{
+    color: white;
+    font-size: 20px;
+}
+.upperpart .income p{
+    color: black;
+}
+.upperpart .Expenses p{
+    color: black;
+}
+
+ .upperpart .income{
+height: 40px;   
+width: 25vw;
+background-color: #28B9B5;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
+}
+
+ .upperpart .expenses{
+    height: 40px;
+    width: 25vw;
+    background-color: #FF5049;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.upperpart .extaken{
+    display: flex;
+    align-items: center;
+}
+.upperpart .extaken .percentage{
+    height: 20px;
+   background-color: whitesmoke;
+   opacity: 0.3;
+    width: 25px;
+ 
+}
+.upperpart .output{
+    height: 40px;
+    width: 25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+}
+nav{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: rgb(243, 239, 239);
+  gap: 20px;
+}
+nav .select{
+    height: 60%;
+    width: 50px;
+   border: none;
+    font-size: 20px;
+}
+nav .description{
+    
+        height: 60%;
+        width: 30%;
+        padding: 15px;
+    }
+    nav .value{
+        height: 60%;
+        width: 70px;
+        
+        padding: 8px;
+        overflow: scroll;
+    }
+    nav button{
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+    }
+    nav button i{
+        font-size: 25px;
+         color: rgb(87, 73, 73);
+    }
+    .lowerpart{
+        width: 100%;
+        height: 20vh;
+       
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 50px;
+    }
+    .lowerpart .incomelist{
+        width: 45%;
+        height: 100%;
+        text-align: left;
+        padding-left: 60px;
+    }
+    .lowerpart .expenselist{
+    width: 50%;
+    height: 100%;
+    text-align: left;
+    
+    }
+    .lowerpart .expenselist p{
+        color: #FF5049;
+    }
+    .lowerpart .incomelist p{
+        color: #28B9B5;
+       
+    }
+    
+   
+    
+    .entry {
+         display: flex;
+         align-items: center; 
+          justify-content: space-between;  
+           position: relative;   
+        padding: 5px;
+        border-bottom: 1px solid #ddd;
+        transition: padding 0.3s ease;
+         /* background-color: brown;     */
+        
+    }
+
+     
+    .entry .amount {
+        flex: 1;
+        text-align: left; 
+        padding-right: 30px; /*Space for the cross icon */
+         transition: padding 0.3s ease;  
+             display: flex;
+    } 
+ 
+input, button {
+    border: 2px solid transparent; /* Default border to handle focus */
+    transition: border-color 0.3s, background-color 0.3s; /* Smooth transition */
+}
+
+
+input:focus, button:focus {
+    outline: none;
+}
+
+
+input[type="text"].income-focus, input[type="text"].expense-focus, button.income-focus, button.expense-focus {
+    border-color: inherit; /* Inherit border color from JS */
+    background-color: inherit; /* Inherit background color from JS */
+}
+
+
+.expenselist .value {
+   color: #dc3545;
+}
+.income .value {
+    padding: 5px;
+    transition: background-color 0.3s;
+}
+
+.incomelist .value {
+    color: #28B9B5;
+          margin-left: 370px;  
+     
+      
+    z-index: 2; /* Increased z-index so it appears above .fa-times */
+    transition: margin-left 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.fa-times {
+    color: #28B9B5;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    border: 1px solid #28B9B5;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 1;
+    visibility: hidden; /* Initially hidden */
+    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for visibility */
+    opacity: 0; /* Set initial opacity to 0 */
+}
+
+.incomelist:hover .value {
+  margin-left: 360px; /*Moves the text a little to the right on hover*/
+} 
+
+.incomelist:hover .fa-times {
+    visibility: visible;
+    opacity: 1; /* Makes .fa-times visible */
+    z-index: 3; /* Ensures .fa-times is above other elements when visible */
+}
+
+
+.expenselist .value {
+    color: #dc3545; /* Red color for expense */
+    
+    margin-left: 480px; 
+    z-index: 2; /* Ensure it appears above .fa-times */
+    transition: margin-left 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.expenselist .fa-times {
+    color: #dc3545;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #dc3545;
+    border-radius: 50%;
+    text-align: center;
+    z-index: 1;
+    visibility: hidden; /* Initially hidden */
+    transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for visibility */
+    opacity: 0; /* Set initial opacity to 0 */
+}
+
+ .expenselist:hover .value {
+    margin-left: 460px; /* Moves the text a little to the right on hover */
+} 
+
+.expenselist:hover .fa-times {
+    visibility: visible;
+    opacity: 1; /* Makes .fa-times visible */
+    z-index: 3; /* Ensures .fa-times is above other elements when visible */
+}
+
+
+
